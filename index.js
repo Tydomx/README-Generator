@@ -66,7 +66,7 @@ const questions = [
         // contributors  
         type: 'input',
         name: 'contributors',
-        message: 'How can users contribute to the project?',
+        message: 'Name any contributors to the project?',
         validate: userContributors => {
             if (userContributors) {
                 return true;
@@ -78,7 +78,7 @@ const questions = [
     },
     {
         // add license(s)
-        type: 'checkbox',
+        type: 'list',
         name: 'license',
         message: 'Add a license to the project (Check those that apply)',
         choices: ['Apache 2.0', 'MIT', 'MPL-2.0', 'None of the above'],
@@ -148,9 +148,9 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions)
-    .then(function(answer) {
-        console.log(answer);
-        writeToFile('README.md', generateMarkdown(answer));
+    .then(function(data) {
+        console.log(data);
+        writeToFile('README.md', generateMarkdown(data));
     });
 }
 

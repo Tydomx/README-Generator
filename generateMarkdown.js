@@ -3,11 +3,11 @@
 function renderLicenseBadge(license) {
   let badge = '';
   if (license === 'MIT') {
-    badge = '![License](https://img.shields.io/badge/License-MIT-yellow.svg)'
+    badge = '[![License](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)'
   } else if (license === 'MPL-2.0') {
-    badge = '![License](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)'
+    badge = '[![License](https://img.shields.io/badge/License-MPL_2.0-brightgreen)](./LICENSE)'
   } else if (license === 'Apache 2.0') {
-    badge = '![License](https://img.shields.io/badge/license-Apache%202.0-yellow.svg)'
+    badge = '[![License](https://img.shields.io/badge/license-Apache%202.0-blue)](./LICENSE)'
   } else {
     badge = ''
   }
@@ -56,7 +56,7 @@ function generateMarkdown(data) {
   ### * [Tests](#tests)
   ### * [Questions](#questions)
 
-  ## Installations:
+  ## Installation:
   ### You must install the following for this app to function:
   ### ${data.installInstruct}
 
