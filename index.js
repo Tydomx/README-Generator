@@ -2,7 +2,7 @@
 const inquirer = require('inquirer'); // inquirer package
 const fs = require('fs'); // file system
 const { title } = require('process');
-const generateMarkdown = require('./utils/generateMarkdown.js');
+const generateMarkdown = require('./generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -149,7 +149,7 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions)
     .then(function(answer) {
-        console.log(answer)
+        console.log(answer);
         writeToFile('README.md', generateMarkdown(answer));
     });
 }
